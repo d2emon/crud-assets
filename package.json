@@ -1,0 +1,23 @@
+{
+  "name": "crud-assets",
+  "version": "1.0.0",
+  "description": "Assets for CRUD",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d2emon/crud-assets.git"
+  },
+  "keywords": [
+    "assets",
+    "crud",
+    "scaffold",
+    "pug"
+  ],
+  "author": "Dmitry Kutsenk <d2emonium@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/d2emon/crud-assets/issues"
+  },
+  "homepage": "https://github.com/d2emon/crud-assets#readme",
+  "private": true
+}
