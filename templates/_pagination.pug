@@ -1,18 +1,19 @@
-| {% if items.pages %}
-ul(class="pagination pagination-sm", style="display:inherit;")
-  li(class="{% if not items.has_prev %}disabled{% endif %}")
-    a(href="?page={{ items.prev_num }}")
-      span(class="glyphicon glyphicon-menu-left")
-  | {%- for page in items.iter_pages() %}
-  | {% if page %}
-  li(class="{% if page == items.page %}active{% endif %}")
-    a(href="?page={{ page }}") {{ page }}
-  | {% else %}
-  li
-    span(class=ellipsis) …
-  | {% endif %}
-  | {%- endfor %}
-  li(class="{% if not items.has_next %}disabled{% endif %}")
-    a(href="?page={{ items.next_num }}")
-      span(class="glyphicon glyphicon-menu-right")
+| {% if pagination.pages %}
+div(class="well well-sm")
+  ul(class="pagination pagination-sm")
+    li(class="{% if not pagination.has_prev %}disabled{% endif %}")
+      a(href="?page={{ pagination.prev_num }}")
+        span(class="glyphicon glyphicon-menu-left")
+    | {%- for page in pagination.iter_pages() %}
+    | {% if page %}
+    li(class="{% if page == pagination.page %}active{% endif %}")
+      a(href="?page={{ page }}") {{ page }}
+    | {% else %}
+    li
+      span(class=ellipsis) …
+    | {% endif %}
+    | {%- endfor %}
+    li(class="{% if not pagination.has_next %}disabled{% endif %}")
+      a(href="?page={{ pagination.next_num }}")
+        span(class="glyphicon glyphicon-menu-right")
 | {% endif %}
