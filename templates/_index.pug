@@ -12,19 +12,23 @@ html
       | {% block style %}{% endblock %}
   body
     header
-      nav(class="navbar navbar-inverse navbar-fixed-top")
-        div(class="container")
+      // nav(class="navbar navbar-inverse navbar-fixed-top")
+      nav(class="navbar navbar-default navbar-fixed-top topnav", role="navigation")
+        div(class="container topnav")
           div(class="navbar-header")
-            button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+            // button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+            button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
               span(class="sr-only") Toggle navigation
               span(class="icon-bar")
               span(class="icon-bar")
               span(class="icon-bar")
-            a(class="navbar-brand", href="/")
+            a(class="navbar-brand topnav", href="/")
               block navbrand
                 | Сайт
-          div(id="navbar", class="navbar-collapse collapse")
+          // div(id="navbar", class="navbar-collapse collapse")
+          div(class="collapse navbar-collapse", id="bs-example-navbar-collapse-1")
             block navbar
+
     div(class="container")
       #confirm-del(class="modal fade", tabindex=-1, role="dialog")
         .modal-dialog
@@ -42,9 +46,14 @@ html
       |   {% endfor %}
       | {% endwith %}
 
-      div(class="row")
+      div(class="row wrapper")
+        include _panel.pug
         block content
           | {% block content %}{% endblock %}
+      .push
+
+    block footer
+      | {% block footer %}{% endblock %}
     
     script(src="{{ url_for('static', filename='js/jquery.min.js') }}")
     script(src="{{ url_for('static', filename='js/bootstrap.min.js') }}")
